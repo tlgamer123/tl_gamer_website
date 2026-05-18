@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My YouTube Channel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .youtube-red { color: #FF0000; }
+        .bg-youtube-red { background-color: #FF0000; }
+        .hover-youtube-red:hover { background-color: #cc0000; }
+        .video-card { transition: transform 0.3s ease; }
+        .video-card:hover { transform: translateY(-5px); }
+        .loading-skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div id="channel-avatar" class="w-10 h-10 rounded-full bg-gray-200 loading-skeleton"></div>
+                <h1 id="channel-name" class="text-xl font-bold text-gray-800">Loading...</h1>
+            </div>
+            <a id="subscribe-btn" href="#" target="_blank" rel="noopener noreferrer" class="bg-youtube-red text-white px-6 py-2 rounded-full font-semibold hover-youtube-red transition flex items-center space-x-2">
+                <i class="fab fa-youtube"></i>
+                <span>Subscribe</span>
+            </a>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-red-600 to-red-800 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-3xl mx-auto">
+                <div id="hero-avatar" class="w-24 h-24 rounded-full mx-auto mb-6 bg-white/20 loading-skeleton"></div>
+                <h2 id="hero-channel-name" class="text-4xl md:text-5xl font-bold mb-4">Loading Channel...</h2>
+                <p class="text-xl mb-8 opacity-90">Welcome to my official YouTube channel! Check out my latest videos below.</p>
+                <div class="flex justify-center space-x-4 mb-8">
+                    <div class="text-center">
+                        <div id="subscriber-count" class="text-3xl font-bold">-</div>
+                        <div class="text-sm opacity-80">Subscribers</div>
+                    </div>
+                    <div class="text-center">
+                        <div id="video-count" class="text-3xl font-bold">-</div>
+                        <div class="text-sm opacity-80">Videos</div>
+                    </div>
+                </div>
+                <a id="hero-subscribe-btn" href="#" target="_blank" rel="noopener noreferrer" class="bg-white text-red-600 px-8 py-3 rounded-full font-bold text-lg hover:bg-gray-100 transition inline-flex items-center space-x-2">
+                    <i class="fab fa-youtube"></i>
+                    <span>Subscribe Now</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Latest Videos -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-bold text-gray-800 mb-8 text-center">Latest Videos</h3>
+            <div id="videos-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Loading skeletons -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 loading-skeleton"></div>
+                    <div class="p-4">
+                        <div class="h-4 loading-skeleton rounded mb-2"></div>
+                        <div class="h-3 loading-skeleton rounded w-3/4"></div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 loading-skeleton"></div>
+                    <div class="p-4">
+                        <div class="h-4 loading-skeleton rounded mb-2"></div>
+                        <div class="h-3 loading-skeleton rounded w-3/4"></div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 loading-skeleton"></div>
+                    <div class="p-4">
+                        <div class="h-4 loading-skeleton rounded mb-2"></div>
+                        <div class="h-3 loading-skeleton rounded w-3/4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="bg-gray-100 py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h3 class="text-3xl font-bold text-gray-800 mb-6">About My Channel</h3>
+                <p class="text-gray-600 mb-8 leading-relaxed">
+                    Welcome to my YouTube channel! I create content about [your topic]. 
+                    Subscribe to stay updated with my latest videos, tutorials, and insights.
+                    Join our growing community of viewers who love [your niche]!
+                </p>
+                <div class="flex justify-center space-x-6">
+                    <a id="youtube-link" href="#" target="_blank" rel="noopener noreferrer" class="text-red-600 hover:text-red-800 text-3xl transition">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" class="text-gray-600 hover:text-gray-800 text-3xl transition">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-600 hover:text-gray-800 text-3xl transition">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-600 hover:text-gray-800 text-3xl transition">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 My YouTube Channel. All rights reserved.</p>
+            <p class="mt-2 text-gray-400 text-sm">Powered by YouTube RSS Feed</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Your YouTube Channel ID
+        const CHANNEL_ID = 'UC3RXvByahoj5UVOfsMPZmmw';
+        const RSS_URL = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
+        const CHANNEL_URL = `https://www.youtube.com/channel/${CHANNEL_ID}?sub_confirmation=1`;
+        const CHANNEL_URL_PLAIN = `https://www.youtube.com/channel/${CHANNEL_ID}`;
+        
+        // Parser for XML
+        const parser = new DOMParser();
+        
+        // Set subscribe links immediately
+        function setSubscribeLinks() {
+            const subscribeBtn = document.getElementById('subscribe-btn');
+            const heroSubscribeBtn = document.getElementById('hero-subscribe-btn');
+            const youtubeLink = document.getElementById('youtube-link');
+            
+            if (subscribeBtn) subscribeBtn.href = CHANNEL_URL;
+            if (heroSubscribeBtn) heroSubscribeBtn.href = CHANNEL_URL;
+            if (youtubeLink) youtubeLink.href = CHANNEL_URL_PLAIN;
+        }
+        
+        // Parse RSS feed
+        async function fetchChannelData() {
+            // Use multiple CORS proxies for better reliability
+            const proxies = [
+                'https://api.allorigins.win/raw?url=',
+                'https://corsproxy.io/?',
+                'https://thingproxy.freeboard.io/fetch/'
+            ];
+            
+            let xmlText = '';
+            
+            // Try each proxy until one works
+            for (const proxy of proxies) {
+                try {
+                    const response = await fetch(proxy + encodeURIComponent(RSS_URL));
+                    if (response.ok) {
+                        xmlText = await response.text();
+                        break;
+                    }
+                } catch (e) {
+                    console.log(`Proxy ${proxy} failed, trying next...`);
+                    continue;
+                }
+            }
+            
+            if (!xmlText) throw new Error('All proxies failed');
+            const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
+            
+            // Extract channel info
+            const channelName = xmlDoc.querySelector('author > name')?.textContent || 'My YouTube Channel';
+            const channelAvatar = xmlDoc.querySelector('image > url')?.textContent || '';
+            
+            // Update UI with channel info
+            document.getElementById('channel-name').textContent = channelName;
+            document.getElementById('hero-channel-name').textContent = channelName;
+            document.title = `${channelName} - YouTube Channel`;
+            
+            if (channelAvatar) {
+                document.getElementById('channel-avatar').style.backgroundImage = `url(${channelAvatar})`;
+                document.getElementById('channel-avatar').style.backgroundSize = 'cover';
+                document.getElementById('channel-avatar').classList.remove('loading-skeleton');
+                
+                document.getElementById('hero-avatar').style.backgroundImage = `url(${channelAvatar})`;
+                document.getElementById('hero-avatar').style.backgroundSize = 'cover';
+                document.getElementById('hero-avatar').classList.remove('loading-skeleton');
+            }
+            
+            // Extract videos
+            const entries = xmlDoc.querySelectorAll('entry');
+            const videosContainer = document.getElementById('videos-container');
+            videosContainer.innerHTML = '';
+            
+            if (entries.length === 0) {
+                videosContainer.innerHTML = '<p class="text-center col-span-full text-gray-500">No videos found yet.</p>';
+                return;
+            }
+            
+            // Update video count (approximate from RSS)
+            document.getElementById('video-count').textContent = entries.length + '+';
+            
+            // Display latest 6 videos
+            entries.slice(0, 6).forEach(entry => {
+                const title = entry.querySelector('title')?.textContent || 'Untitled';
+                const link = entry.querySelector('link')?.getAttribute('href') || '#';
+                const published = entry.querySelector('published')?.textContent || '';
+                const thumbnail = entry.querySelector('media\\:thumbnail, thumbnail')?.getAttribute('url') || '';
+                const date = published ? new Date(published).toLocaleDateString() : '';
+                
+                const videoCard = document.createElement('div');
+                videoCard.className = 'video-card bg-white rounded-lg overflow-hidden shadow-md';
+                videoCard.innerHTML = `
+                    <a href="${link}" target="_blank" rel="noopener noreferrer" class="block">
+                        <div class="relative">
+                            <img src="${thumbnail}" alt="${title}" class="w-full h-48 object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition flex items-center justify-center">
+                                <i class="fab fa-youtube text-white text-4xl opacity-0 hover:opacity-100 transition"></i>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-semibold text-gray-800 mb-2 line-clamp-2">${title}</h4>
+                            <p class="text-sm text-gray-500">${date}</p>
+                        </div>
+                    </a>
+                `;
+                videosContainer.appendChild(videoCard);
+            });
+            
+            // Note: Subscriber count isn't available in RSS feed
+            document.getElementById('subscriber-count').textContent = 'Check YouTube';
+            
+        } catch (error) {
+            console.error('Error fetching channel data:', error);
+            document.getElementById('channel-name').textContent = 'My YouTube Channel';
+            document.getElementById('hero-channel-name').textContent = 'My YouTube Channel';
+            document.getElementById('videos-container').innerHTML = `
+                <div class="col-span-full text-center text-red-500">
+                    <p>Unable to load videos. Please check your internet connection or visit our <a href="${CHANNEL_URL_PLAIN}" class="underline" target="_blank" rel="noopener noreferrer">YouTube channel</a> directly.</p>
+                </div>
+            `;
+        }
+    }
+    
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        setSubscribeLinks();
+        fetchChannelData();
+    });
+    </script>
+</body>
+</html>
