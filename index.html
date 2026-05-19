@@ -129,6 +129,13 @@
             margin-right: auto;
         }
 
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
         .cta-button {
             display: inline-block;
             padding: 15px 40px;
@@ -146,6 +153,35 @@
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+        }
+
+        /* YouTube Subscribe Button */
+        .youtube-subscribe {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #FF0000;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .youtube-subscribe:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.8);
+            background: #cc0000;
+        }
+
+        .youtube-icon {
+            margin-right: 8px;
         }
 
         /* Features Section */
@@ -360,7 +396,12 @@
         <div class="hero-content">
             <h1>TL GAMER</h1>
             <p>Level Up Your Gaming Experience. Join the ultimate community of gamers and dominate the competition.</p>
-            <a href="#games" class="cta-button">Start Playing</a>
+            <div class="hero-buttons">
+                <a href="#games" class="cta-button">Start Playing</a>
+                <a href="https://www.youtube.com/@techinggamer4308?sub_confirmation=1" target="_blank" class="youtube-subscribe">
+                    <span class="youtube-icon">▶️</span> Subscribe on YouTube
+                </a>
+            </div>
         </div>
     </section>
 
