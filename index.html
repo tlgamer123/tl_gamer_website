@@ -636,7 +636,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Animation Portfolio</title>
   <style>
-    /* Reset basic browser styles */
     * {
       margin: 0;
       padding: 0;
@@ -648,18 +647,22 @@
       background-color: #0b0b0f;
       color: #ffffff;
       line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     header {
       text-align: center;
-      padding: 3rem 1rem;
-      background: linear-gradient(to bottom, #16161a, #0b0b0f);
+      padding: 4rem 1rem 2rem;
     }
 
     header h1 {
       font-size: 2.5rem;
       margin-bottom: 0.5rem;
-      color: #0070f3; /* Vercel Blue accent */
+      background: linear-gradient(45deg, #0070f3, #00dfd8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     header p {
@@ -667,99 +670,109 @@
       font-size: 1.1rem;
     }
 
-    /* Container for each showcase section */
-    .showcase-section {
-      max-width: 1200px;
-      margin: 4rem auto;
+    .portfolio-grid {
+      max-width: 1000px;
+      margin: 2rem auto;
       padding: 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      width: 100%;
     }
 
-    .section-title {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
+    .project-card {
       display: flex;
       align-items: center;
-      gap: 10px;
-    }
-
-    /* Responsive container holding the interactive animation */
-    .animation-wrapper {
-      position: relative;
-      width: 100%;
-      height: 600px; /* Adjust height as desired for your layout */
-      border-radius: 12px;
-      overflow: hidden;
+      justify-content: space-between;
+      background-color: #16161a;
       border: 1px solid #222225;
-      background-color: #000000;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      text-decoration: none;
+      color: #ffffff;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
-    /* Seamless iframe embedding */
-    .animation-wrapper iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-      display: block;
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: #0070f3;
+      box-shadow: 0 10px 25px rgba(0, 112, 243, 0.15);
+    }
+
+    .project-info h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .project-info p {
+      color: #888888;
+      font-size: 0.95rem;
+    }
+
+    .visit-btn {
+      background-color: #0070f3;
+      color: #ffffff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: background-color 0.2s ease;
+    }
+
+    .project-card:hover .visit-btn {
+      background-color: #0051b3;
     }
 
     footer {
+      margin-top: auto;
       text-align: center;
-      padding: 4rem 1rem 2rem;
+      padding: 3rem 1rem 2rem;
       color: #444446;
       font-size: 0.9rem;
     }
 
-    /* Responsive adjustments for smaller screens */
-    @media (max-width: 768px) {
-      .animation-wrapper {
-        height: 400px;
+    @media (max-width: 600px) {
+      .project-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
       }
-      header h1 {
-        font-size: 2rem;
+      .visit-btn {
+        width: 100%;
+        text-align: center;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Page Header -->
   <header>
     <h1>Build Animations Showcase</h1>
-    <p>Interactive web experiences deployed live on Vercel</p>
+    <p>Launch live interactive web experiences deployed on Vercel</p>
   </header>
 
-  <main>
-    <!-- Build 1: SafeZone -->
-    <section class="showcase-section">
-      <h2 class="section-title">🛡️ SafeZone Build</h2>
-      <div class="animation-wrapper">
-        <iframe 
-          src="https://vercel.app" 
-          loading="lazy"
-          allow="autoplay; encrypted-media; fullscreen"
-          title="SafeZone Interactive Build">
-        </iframe>
-      </div>
-    </section>
+  <main class="portfolio-grid">
 
-    <!-- Build 2: Planet Smasher -->
-    <section class="showcase-section">
-      <h2 class="section-title">🚀 Planet Smasher Build</h2>
-      <div class="animation-wrapper">
-        <iframe 
-          src="https://vercel.app" 
-          loading="lazy"
-          allow="autoplay; encrypted-media; fullscreen"
-          title="Planet Smasher Interactive Build">
-        </iframe>
+    <!-- Card 1: SafeZone -->
+    <a href="https://vercel.app" target="_blank" rel="noopener noreferrer" class="project-card">
+      <div class="project-info">
+        <h2>🛡️ SafeZone Build</h2>
+        <p>Open live animation and security workspace app</p>
       </div>
-    </section>
+      <div class="visit-btn">Launch Build &rarr;</div>
+    </a>
+
+    <!-- Card 2: Planet Smasher -->
+    <a href="https://vercel.app" target="_blank" rel="noopener noreferrer" class="project-card">
+      <div class="project-info">
+        <h2>🚀 Planet Smasher Build</h2>
+        <p>Open live interactive orbital weapons simulation</p>
+      </div>
+      <div class="visit-btn">Launch Build &rarr;</div>
+    </a>
+
   </main>
 
-  <!-- Page Footer -->
   <footer>
     <p>&copy; 2026 Your Name. Powered by Vercel.</p>
   </footer>
